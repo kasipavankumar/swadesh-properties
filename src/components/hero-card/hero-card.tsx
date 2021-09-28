@@ -4,7 +4,7 @@ import HeroCardMeta from "./meta";
 
 export default function SwadeshPropertiesHeroCard() {
   return (
-    <div className="relative bg-white rounded-xl shadow-xl overflow-hidden flex flex-col md:flex-row md:w-5/6 w-11/12">
+    <div className="relative bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
       <span
         data-cy="funding-status-badge"
         className="absolute top-4 left-4 font-semibold tracking-wide py-1 px-3 rounded-full uppercase text-sm text-white bg-royalGoldenYellow"

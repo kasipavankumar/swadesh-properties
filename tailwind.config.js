@@ -9,6 +9,12 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
+      swadeshGrey: {
+        DEFAULT: "#F5F3F0",
+      },
+      swadeshBgGreen: {
+        DEFAULT: "#032C28",
+      },
       royalGreen: {
         DEFAULT: "#0F524B",
       },
@@ -19,7 +25,11 @@ module.exports = {
     fontFamily: {
       sans: ["THICCCBOI", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      zIndex: {
+        "-10": "-10",
+      },
+    },
   },
   variants: {
     extend: {},
