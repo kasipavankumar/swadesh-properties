@@ -15,7 +15,7 @@ export default function Home() {
           style={{ height: "580px" }}
         >
           {/* [START]: Header */}
-          <div className="container mx-auto px-4" data-cy="header">
+          <div className="container mx-auto px-4 w-5/6" data-cy="header">
             <div className="flex flex-col md:flex-row md:items-center justify-between">
               <Link href="/">
                 <a>
@@ -49,15 +49,18 @@ export default function Home() {
 
         {/* [START]: Active property */}
         <div
-          className="container relative mx-auto px-4"
-          style={{ marginTop: "-21.5rem" }}
+          className="relative mx-auto px-4 w-11/12 md:w-5/6"
+          style={{ marginTop: "-25.5rem" }}
         >
-          <h1 className="font-bold text-6xl text-white mb-20">
+          <h1 className="font-bold text-5xl md:text-6xl text-white mb-20">
             All properties
           </h1>
           <SwadeshPropertiesHeroCard />
         </div>
         {/* [END]: Active property */}
+
+        {/* [START]: Past properties */}
+        {/* [END]: Past properties */}
       </main>
       {/* [END]: Content */}
     </RootLayout>
