@@ -3,8 +3,7 @@
     "baseUrl": "src",
     "paths": {
       "!components/*": ["components/*"],
-      "!hooks/*": ["hooks/*"],
-      "!layouts/*": ["layouts/*"]
+      "!hooks/*": ["hooks/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
