@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import LoadingAwareSkeleton from "!components/loading-aware-skeleton";
+import { LoadingAwareSkeleton, Badge } from "!components/index";
 import { useActiveProperty } from "!hooks/index";
 import HeroCardMeta from "./meta";
 
@@ -15,12 +15,7 @@ export default function SwadeshPropertiesHeroCard() {
     <div className="relative bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
       {/* Funding Status Badge */}
       <LoadingAwareSkeleton loading={isLoading}>
-        <span
-          data-cy="funding-status-badge"
-          className="absolute top-4 left-4 z-10 font-semibold tracking-wide py-1 px-3 rounded-full uppercase text-sm text-white bg-royalGoldenYellow"
-        >
-          {property?.funding?.active && "Active"}
-        </span>
+        <Badge purpose="Active" />
       </LoadingAwareSkeleton>
 
       {/* Property Image */}
