@@ -1,4 +1,14 @@
-export default function HeroCardMeta() {
+import LoadingAwareSkeleton from "!components/loading-aware-skeleton";
+
+export default function HeroCardMeta({ isLoading, meta }) {
+  const metadata = [
+    { metric: "Area", value: meta?.area },
+    { metric: "Price psf", value: meta?.price },
+    { metric: "Yield", value: meta?.yield },
+    { metric: "Return Target", value: meta?.returnTarget },
+    { metric: "Funding Status", value: meta?.fundingStatus },
+  ];
+
   return (
     <div
       data-cy="hero-property-meta"
@@ -6,21 +16,15 @@ export default function HeroCardMeta() {
     >
       {metadata.map(({ metric, value }) => (
         <div data-cy={metric} key={metric}>
-          <div className="flex justify-between mb-3">
-            <p>{metric}</p>
-            <p className="font-bold">{value}</p>
-          </div>
+          <LoadingAwareSkeleton loading={isLoading}>
+            <div className="flex justify-between mb-3">
+              <p>{metric}</p>
+              <p className="font-bold">{value}</p>
+            </div>
+          </LoadingAwareSkeleton>
           <hr />
         </div>
       ))}
     </div>
   );
 }
-
-const metadata = [
-  { metric: "Area", value: "52,277" },
-  { metric: "Price psf", value: "₹12,338" },
-  { metric: "Yield", value: "9.14%" },
-  { metric: "Return Target", value: "18.1%" },
-  { metric: "Funding Status", value: "63%" },
-];
