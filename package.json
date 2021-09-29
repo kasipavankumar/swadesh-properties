@@ -1,6 +1,6 @@
 {
   "name": "swadesh-properties",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Swadesh Frontend Intern Assignment.",
   "author": "D. Kasi Pavan Kumar <devdkpk@gmail.com> (https://kasipavankumar.in)",
   "license": "MIT",
@@ -24,6 +24,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-loading-skeleton": "^2.2.0",
+    "sharp": "^0.29.1",
     "swr": "^1.0.1"
   },
   "devDependencies": {
