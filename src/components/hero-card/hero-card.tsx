@@ -1,4 +1,4 @@
-// TODO: Use Next Image Component.
+import Image from "next/image";
 
 import LoadingAwareSkeleton from "!components/loading-aware-skeleton";
 import { useActiveProperty } from "!hooks/index";
@@ -7,6 +7,7 @@ import HeroCardMeta from "./meta";
 export default function SwadeshPropertiesHeroCard() {
   const { property, isLoading, hasErrors } = useActiveProperty();
 
+  // TODO: Handle errors.
   if (!isLoading && hasErrors) {
   }
 
@@ -16,7 +17,7 @@ export default function SwadeshPropertiesHeroCard() {
       <LoadingAwareSkeleton loading={isLoading}>
         <span
           data-cy="funding-status-badge"
-          className="absolute top-4 left-4 font-semibold tracking-wide py-1 px-3 rounded-full uppercase text-sm text-white bg-royalGoldenYellow"
+          className="absolute top-4 left-4 z-10 font-semibold tracking-wide py-1 px-3 rounded-full uppercase text-sm text-white bg-royalGoldenYellow"
         >
           {property?.funding?.active && "Active"}
         </span>
@@ -27,14 +28,13 @@ export default function SwadeshPropertiesHeroCard() {
         loading={isLoading}
         skeletonProps={{ count: 1, height: 455, width: 416 }}
       >
-        <div className="md:w-4/12 w-full">
-          <img
-            className="object-cover w-full h-full"
+        <div className="relative md:w-4/12 w-full overflow-hidden h-96 md:h-auto">
+          <Image
+            alt={property?.name}
             src={property?.imgUrl}
-            // width={300}
-            // height={500}
-            // layout="responsive"
-            // objectFit="cover"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="center"
           />
         </div>
       </LoadingAwareSkeleton>
