@@ -9,6 +9,12 @@ export default function SwadeshProperties({ Component, pageProps }) {
           rel="stylesheet"
           href="https://fonts.bandwidth.workers.dev/thicccboi"
         />
+        <link
+          href="https://swadesh.co/images/favicon.png"
+          rel="shortcut icon"
+          type="image/x-icon"
+        ></link>
+        <title>Swadesh Properties (DKPK)</title>
       </Head>
       <Component {...pageProps} />
     </>
