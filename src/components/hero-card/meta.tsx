@@ -1,6 +1,8 @@
 import LoadingAwareSkeleton from "!components/loading-aware-skeleton";
 
-export default function HeroCardMeta({ isLoading, meta }) {
+export default function HeroCardMeta({ isLoading, meta, gridLayout = true }) {
+  const gridClasses = `grid md:grid-cols-2 grid-cols-1 gap-4`;
+  const flexClasses = `flex flex-col`;
   const metadata = [
     { metric: "Area", value: meta?.area },
     { metric: "Price psf", value: meta?.price },
@@ -12,10 +14,14 @@ export default function HeroCardMeta({ isLoading, meta }) {
   return (
     <div
       data-cy="hero-property-meta"
-      className="grid md:grid-cols-2 grid-cols-1 gap-4 mb-5"
+      className={`${gridLayout ? gridClasses : flexClasses} mb-5`}
     >
       {metadata.map(({ metric, value }) => (
-        <div data-cy={metric} key={metric}>
+        <div
+          data-cy={metric}
+          key={metric}
+          className={`${!gridLayout && "mb-3"}`}
+        >
           <LoadingAwareSkeleton loading={isLoading}>
             <div className="flex justify-between mb-3">
               <p>{metric}</p>
