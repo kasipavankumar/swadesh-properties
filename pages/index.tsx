@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { SwadeshPropertiesHeroCard } from "!components/index";
+import { SwadeshPropertiesHeroCard } from "!components";
 import { FundedPropertiesLayout } from "!layouts";
 
 export default function Home() {

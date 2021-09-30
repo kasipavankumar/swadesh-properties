@@ -1,9 +1,8 @@
 import Image from "next/image";
 
-import { LoadingAwareSkeleton, Badge } from "!components/index";
-import { useProperties } from "!hooks/index";
+import { LoadingAwareSkeleton, Badge, ProgressBar } from "!components";
+import { useProperties } from "!hooks";
 import HeroCardMeta from "./meta";
-import ProgressBar from "!components/progress-bar";
 
 export default function SwadeshPropertiesHeroCard() {
   const { data: property, isLoading, hasErrors } = useProperties("active");

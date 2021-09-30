@@ -4,6 +4,7 @@ import "tailwindcss/tailwind.css";
 export default function SwadeshProperties({ Component, pageProps }) {
   return (
     <>
+      {/* [START]: Head */}
       <Head>
         <link
           rel="stylesheet"
@@ -16,6 +17,7 @@ export default function SwadeshProperties({ Component, pageProps }) {
         ></link>
         <title>Swadesh Properties (DKPK)</title>
       </Head>
+      {/* [START]: Head */}
 
       {/* [START]: Layout */}
       <div className="min-h-screen flex flex-col" data-cy="layout">
