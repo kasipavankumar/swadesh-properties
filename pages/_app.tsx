@@ -20,7 +20,6 @@ export default function SwadeshProperties({ Component, pageProps }) {
       {/* [START]: Layout */}
       <div className="min-h-screen flex flex-col" data-cy="layout">
         <Component {...pageProps} />
-        <div className="mt-24" />
       </div>
       {/* [END]: Layout */}
     </>
