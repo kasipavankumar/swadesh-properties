@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { pastProperties } from "!lib/properties-data";
 
-export default function queryActiveProperty(
+export default function queryFundedProperties(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
