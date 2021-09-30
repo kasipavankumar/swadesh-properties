@@ -17,11 +17,11 @@ export default function ProgressBar({
   return (
     <div
       data-cy="progress-bar"
-      className="flex flex-row space-x-3 items-center mb-5 w-full"
+      className="flex flex-row space-x-5 items-center mb-5 w-full"
     >
       <div
         data-cy="progress-bar-shell"
-        className="h-1.5 md:w-52 w-full bg-gray-300 rounded-full"
+        className="h-1.5 w-full bg-gray-300 rounded-full flex-grow"
       >
         <div
           data-cy="progress"

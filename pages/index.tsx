@@ -23,6 +23,7 @@ export default function Home() {
                   layout="intrinsic"
                   height="60"
                   width="150"
+                  // We need to load as quick as possible.
                   loading="eager"
                 />
               </a>
@@ -57,9 +58,9 @@ export default function Home() {
       </div>
       {/* [END]: Active property */}
 
-      {/* [START]: Past properties */}
+      {/* [START]: Past (Funded) properties */}
       <FundedPropertiesLayout />
-      {/* [END]: Past properties */}
+      {/* [END]: Past (Funded) properties */}
     </main>
     // [END]: Content
   );

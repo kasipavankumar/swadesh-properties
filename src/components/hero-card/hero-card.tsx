@@ -13,12 +13,13 @@ export default function SwadeshPropertiesHeroCard() {
 
   return (
     <div className="relative bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
-      {/* Funding Status Badge */}
+      {/* [START]: Funding Status Badge */}
       <LoadingAwareSkeleton loading={isLoading}>
         <Badge purpose="Active" />
       </LoadingAwareSkeleton>
+      {/* [END]: Funding Status Badge */}
 
-      {/* Property Image */}
+      {/* [START]: Property Image */}
       <LoadingAwareSkeleton
         loading={isLoading}
         skeletonProps={{ count: 1, height: 455, width: 416 }}
@@ -33,6 +34,7 @@ export default function SwadeshPropertiesHeroCard() {
           />
         </div>
       </LoadingAwareSkeleton>
+      {/* [END]: Property Image */}
 
       <div className="bg-white p-10 md:w-8/12 w-full">
         {/* [START]: Title */}
@@ -54,10 +56,12 @@ export default function SwadeshPropertiesHeroCard() {
 
         {/* [START]: Funding status */}
         <LoadingAwareSkeleton loading={isLoading}>
-          <ProgressBar
-            text="funded"
-            currentProgress={property?.funding?.status}
-          />
+          <div className="md:w-80 w-full">
+            <ProgressBar
+              text="funded"
+              currentProgress={property?.funding?.status}
+            />
+          </div>
         </LoadingAwareSkeleton>
         {/* [END]: Funding status */}
 
