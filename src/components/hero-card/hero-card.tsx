@@ -71,8 +71,8 @@ export default function SwadeshPropertiesHeroCard() {
 
         {/* [START]: CTA Invest now */}
         <LoadingAwareSkeleton loading={isLoading}>
-          <div className="flex">
-            <a href={property?.slug}>
+          <div>
+            <a href={property?.slug} data-cy="active-property-slug">
               <button className="bg-royalGoldenYellow md:w-auto w-full py-5 px-16 rounded-xl flex flex-row items-center justify-center space-x-2">
                 <p className="text-base text-white font-semibold">Invest now</p>
                 <img src="/icons/arrow-right.svg" alt="Right arrow" />
