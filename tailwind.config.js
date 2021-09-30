@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
-      swadeshGrey: {
+      swadeshBgGrey: {
         DEFAULT: "#F5F3F0",
       },
       swadeshBgGreen: {
