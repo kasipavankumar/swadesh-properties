@@ -3,6 +3,7 @@ import Image from "next/image";
 import { LoadingAwareSkeleton, Badge } from "!components/index";
 import { useProperties } from "!hooks/index";
 import HeroCardMeta from "./meta";
+import ProgressBar from "!components/progress-bar";
 
 export default function SwadeshPropertiesHeroCard() {
   const { data: property, isLoading, hasErrors } = useProperties("active");
@@ -54,14 +55,10 @@ export default function SwadeshPropertiesHeroCard() {
 
         {/* [START]: Funding status */}
         <LoadingAwareSkeleton loading={isLoading}>
-          <div className="flex flex-row space-x-3 items-center mb-5">
-            <div className="h-1.5 md:w-52 w-full bg-gray-300 rounded-full">
-              <div className="bg-royalGreen md:w-40 w-full h-full py-0.5 rounded-full" />
-            </div>
-            <p className="font-medium text-royalGreen whitespace-nowrap">
-              {property?.funding?.status}% funded
-            </p>
-          </div>
+          <ProgressBar
+            text="funded"
+            currentProgress={property?.funding?.status}
+          />
         </LoadingAwareSkeleton>
         {/* [END]: Funding status */}
 

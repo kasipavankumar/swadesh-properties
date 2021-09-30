@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { LoadingAwareSkeleton, Badge } from "!components/index";
+import { LoadingAwareSkeleton, Badge, ProgressBar } from "!components";
 import { HeroCardMeta } from "!components/hero-card";
 
 type PropertyCardProps = {
@@ -57,14 +57,10 @@ export default function PropertyCard({
 
         {/* [START]: Funding status */}
         <LoadingAwareSkeleton loading={isLoading}>
-          <div className="flex flex-row space-x-3 items-center mb-5">
-            <div className="h-1.5 md:w-52 w-full bg-gray-300 rounded-full">
-              <div className="bg-royalGreen md:w-40 w-full h-full py-0.5 rounded-full" />
-            </div>
-            <p className="font-medium text-royalGreen whitespace-nowrap">
-              {property?.funding?.status}% funded
-            </p>
-          </div>
+          <ProgressBar
+            text="funded"
+            currentProgress={property?.funding?.status}
+          />
         </LoadingAwareSkeleton>
         {/* [END]: Funding status */}
 
@@ -81,7 +77,7 @@ export default function PropertyCard({
           <div className="w-full">
             <a href={property?.slug}>
               <button className="bg-royalGreen w-full py-5 px-16 rounded-xl flex flex-row items-center justify-center space-x-2">
-                <p className="text-base text-white font-semibold">
+                <p className="text-base text-white font-semibold whitespace-nowrap">
                   View Opportunity
                 </p>
                 <img src="/icons/arrow-right.svg" alt="Right arrow" />
