@@ -1,3 +1,3 @@
-import useActiveProperty from "./use-active-property";
+import useProperties from "./use-properties";
 
-export { useActiveProperty };
+export { useProperties };
