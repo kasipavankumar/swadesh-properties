@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { activeProperty } from "!lib/properties-data";
+import { pastProperties } from "!lib/properties-data";
 
 export default function queryActiveProperty(
   req: NextApiRequest,
@@ -13,7 +13,7 @@ export default function queryActiveProperty(
         return res.status(200).json({
           status: 200,
           message: "ok",
-          data: activeProperty,
+          data: pastProperties,
         });
       }
 
