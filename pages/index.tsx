@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { SwadeshPropertiesHeroCard, PropertyCard } from "!components/index";
+import { SwadeshPropertiesHeroCard } from "!components/index";
+import { FundedPropertiesLayout } from "!layouts";
 
 export default function Home() {
   return (
     // [START]: Content
-    <main data-cy="root-content">
+    <main data-cy="root-content" className="bg-swadeshBgGrey">
       <div
         className="flex flex-col pt-10 bg-swadeshBgGreen"
         style={{ height: "580px" }}
@@ -57,73 +58,7 @@ export default function Home() {
       {/* [END]: Active property */}
 
       {/* [START]: Past properties */}
-      <div className="relative mx-auto px-4 w-11/12 md:w-5/6">
-        <h1 className="font-bold text-5xl md:text-6xl text-black mt-20 mb-16">
-          Past properties
-        </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          <PropertyCard
-            isLoading={false}
-            property={{
-              name: "The Pavilion III",
-              location: "Outer Ring Road, Bangalore",
-              funding: {
-                status: 64,
-                active: true,
-              },
-              meta: {
-                area: "52,277",
-                price: "₹12,338",
-                yield: "9.14%",
-                returnTarget: "18.1%",
-                fundingStatus: "64%",
-              },
-              slug: "#",
-              imgUrl: "https://i.imgur.com/6mX8dCD.png",
-            }}
-          />
-          <PropertyCard
-            isLoading={false}
-            property={{
-              name: "The Pavilion III",
-              location: "Outer Ring Road, Bangalore",
-              funding: {
-                status: 64,
-                active: true,
-              },
-              meta: {
-                area: "52,277",
-                price: "₹12,338",
-                yield: "9.14%",
-                returnTarget: "18.1%",
-                fundingStatus: "64%",
-              },
-              slug: "#",
-              imgUrl: "https://i.imgur.com/6mX8dCD.png",
-            }}
-          />
-          <PropertyCard
-            isLoading={false}
-            property={{
-              name: "The Pavilion III",
-              location: "Outer Ring Road, Bangalore",
-              funding: {
-                status: 64,
-                active: true,
-              },
-              meta: {
-                area: "52,277",
-                price: "₹12,338",
-                yield: "9.14%",
-                returnTarget: "18.1%",
-                fundingStatus: "64%",
-              },
-              slug: "#",
-              imgUrl: "https://i.imgur.com/6mX8dCD.png",
-            }}
-          />
-        </div>
-      </div>
+      <FundedPropertiesLayout />
       {/* [END]: Past properties */}
     </main>
     // [END]: Content
