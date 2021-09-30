@@ -1,2 +1,5 @@
-# swadesh-properties
-Swadesh Frontend Intern Assignment.
+<div align="center">
+
+[![swadesh.co Logo](./public/icons/swadesh.svg)](https://swadesh.co)
+
+</div>
