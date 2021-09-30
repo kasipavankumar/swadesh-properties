@@ -13,7 +13,7 @@ export default function PropertyCard({
   property,
 }: PropertyCardProps) {
   return (
-    <div className="relative h-auto bg-white rounded-xl shadow-lg overflow-hidden flex flex-col max-w-full">
+    <div className="relative h-auto bg-white rounded-xl shadow-xl overflow-hidden flex flex-col max-w-full">
       {/* Funding Status Badge */}
       <LoadingAwareSkeleton loading={isLoading}>
         <Badge purpose="Funded" />
@@ -80,8 +80,10 @@ export default function PropertyCard({
         <LoadingAwareSkeleton loading={isLoading}>
           <div className="w-full">
             <a href={property?.slug}>
-              <button className="bg-royalGoldenYellow w-full py-5 px-16 rounded-xl flex flex-row items-center justify-center space-x-2">
-                <p className="text-base text-white font-semibold">Invest now</p>
+              <button className="bg-royalGreen w-full py-5 px-16 rounded-xl flex flex-row items-center justify-center space-x-2">
+                <p className="text-base text-white font-semibold">
+                  View Opportunity
+                </p>
                 <img src="/icons/arrow-right.svg" alt="Right arrow" />
               </button>
             </a>

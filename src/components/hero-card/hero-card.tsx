@@ -1,15 +1,15 @@
 import Image from "next/image";
 
 import { LoadingAwareSkeleton, Badge } from "!components/index";
-import { useActiveProperty } from "!hooks/index";
+import { useProperties } from "!hooks/index";
 import HeroCardMeta from "./meta";
 
 export default function SwadeshPropertiesHeroCard() {
-  const { property, isLoading, hasErrors } = useActiveProperty();
+  const { data: property, isLoading, hasErrors } = useProperties("active");
 
   // TODO: Handle errors.
-  if (!isLoading && hasErrors) {
-  }
+  // if (!isLoading && hasErrors) {
+  // }
 
   return (
     <div className="relative bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row">

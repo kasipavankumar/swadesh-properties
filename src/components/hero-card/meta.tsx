@@ -27,8 +27,8 @@ export default function HeroCardMeta({ isLoading, meta, gridLayout = true }) {
               <p>{metric}</p>
               <p className="font-bold">{value}</p>
             </div>
+            <hr />
           </LoadingAwareSkeleton>
-          <hr />
         </div>
       ))}
     </div>
