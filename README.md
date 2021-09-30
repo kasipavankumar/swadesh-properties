@@ -1,5 +1,5 @@
 <div align="center">
 
-[![swadesh.co Logo](./public/icons/swadesh.svg)](https://swadesh.co)
+[![swadesh.co Logo](https://swadesh.co/images/favicon.png)](https://swadesh.co)
 
 </div>
