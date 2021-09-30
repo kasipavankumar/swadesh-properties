@@ -2,8 +2,14 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
+      "!components": ["components"],
       "!components/*": ["components/*"],
-      "!hooks/*": ["hooks/*"]
+      "!layouts/*": ["layouts/*"],
+      "!layouts": ["layouts"],
+      "!hooks": ["hooks"],
+      "!hooks/*": ["hooks/*"],
+      "!lib": ["lib"],
+      "!lib/*": ["lib/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
