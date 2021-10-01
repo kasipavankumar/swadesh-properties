@@ -1,32 +1,11 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { activeProperty } from "!lib/properties-data";
+import { activeProperty } from "!lib/data";
+import { apiHandler } from "!lib";
 
-export default function queryActiveProperty(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  res.setHeader("Content-Type", "application/json");
-
-  try {
-    switch (req.method) {
-      case "GET": {
-        return res.status(200).json({
-          status: 200,
-          message: "ok",
-          data: activeProperty,
-        });
-      }
-
-      default: {
-        return res
-          .status(405)
-          .json({ status: 405, message: "method-not-allowed" });
-      }
-    }
-  } catch (error) {
-    return res.status(500).json({
-      status: 500,
-      message: "internal-server-error",
-    });
-  }
-}
+export default apiHandler({
+  method: "GET",
+  execBody: async function queryActiveProperty(_, res) {
+    return res
+      .status(200)
+      .json({ status: 200, message: "ok", data: activeProperty });
+  },
+});
