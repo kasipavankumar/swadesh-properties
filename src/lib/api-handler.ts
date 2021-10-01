@@ -6,13 +6,13 @@ type ApiHandlerOpts = {
 };
 
 export default function apiHandler({ method, execBody }: ApiHandlerOpts) {
-  return function (req: NextApiRequest, res: NextApiResponse) {
+  return async function (req: NextApiRequest, res: NextApiResponse) {
     try {
       res.setHeader("Content-Type", "application/json");
 
       switch (req.method) {
         case method: {
-          return execBody(req, res);
+          return await execBody(req, res);
         }
 
         default: {
