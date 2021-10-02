@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-import { LoadingAwareSkeleton, Badge, ProgressBar } from "!components";
+import { useSkeleton } from "!hooks";
+import { Badge, ProgressBar } from "!components";
 import { HeroCardMeta } from "!components/hero-card";
 
 type PropertyCardProps = {
@@ -12,16 +13,17 @@ export default function PropertyCard({
   isLoading,
   property,
 }: PropertyCardProps) {
+  const LoadingAwareSkeleton = useSkeleton(isLoading);
+
   return (
     <div className="relative h-auto bg-white rounded-xl shadow-xl overflow-hidden flex flex-col max-w-full">
       {/* Funding Status Badge */}
-      <LoadingAwareSkeleton loading={isLoading}>
+      <LoadingAwareSkeleton>
         <Badge purpose="Funded" />
       </LoadingAwareSkeleton>
 
       {/* Property Image */}
       <LoadingAwareSkeleton
-        loading={isLoading}
         skeletonProps={{ count: 1, height: 455, width: 416 }}
       >
         <div className="relative h-96 overflow-hidden">
@@ -37,7 +39,7 @@ export default function PropertyCard({
 
       <div className="bg-white p-10 w-full">
         {/* [START]: Title */}
-        <LoadingAwareSkeleton loading={isLoading}>
+        <LoadingAwareSkeleton>
           <h1 className="font-bold tracking-tight text-3xl mb-5">
             {property?.name}
           </h1>
@@ -45,7 +47,7 @@ export default function PropertyCard({
         {/* [END]: Title */}
 
         {/* [START]: Location */}
-        <LoadingAwareSkeleton loading={isLoading}>
+        <LoadingAwareSkeleton>
           <div className="inline-flex items-center space-x-2 mb-5">
             <img src="/icons/location.svg" alt="Location Pin Icon" />
             <p className="leading-tight text-base whitespace-nowrap">
@@ -56,7 +58,7 @@ export default function PropertyCard({
         {/* [END]: Location */}
 
         {/* [START]: Funding status */}
-        <LoadingAwareSkeleton loading={isLoading}>
+        <LoadingAwareSkeleton>
           <ProgressBar
             text="funded"
             currentProgress={property?.funding?.status}
@@ -73,7 +75,7 @@ export default function PropertyCard({
         {/* [END]: Meta */}
 
         {/* [START]: CTA Invest now */}
-        <LoadingAwareSkeleton loading={isLoading}>
+        <LoadingAwareSkeleton>
           <div className="w-full">
             <a href={property?.slug}>
               <button className="bg-royalGreen w-full py-5 px-16 rounded-xl flex flex-row items-center justify-center space-x-2">
